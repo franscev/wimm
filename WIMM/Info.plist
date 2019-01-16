@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>itc-avant-garde-gothic-std-extra-light-5895708744eb6.otf</string>
+		<string>itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf</string>
+		<string>itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf</string>
+		<string>itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf</string>
+		<string>itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf</string>
+		<string>itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf</string>
+		<string>itc-avant-garde-gothic-std-bold-oblique-589573024abd6.otf</string>
+		<string>itc-avant-garde-gothic-std-book-58957161d80eb.otf</string>
+		<string>itc-avant-garde-gothic-std-book-condensed-5895704105b51.otf</string>
+		<string>itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf</string>
+		<string>itc-avant-garde-gothic-std-demi-condensed-589571f095e47.otf</string>
+		<string>itc-avant-garde-gothic-std-demi-589572a199962.otf</string>
+		<string>itc-avant-garde-gothic-std-bold-589572c7e9955.otf</string>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+</dict>
+</plist>
