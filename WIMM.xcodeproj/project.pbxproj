@@ -22,6 +22,7 @@
 		7FE8A3B021EE0EF3007D153B /* RecoverPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE8A3AF21EE0EF3007D153B /* RecoverPassVC.swift */; };
 		7FE8A3B221EE0F01007D153B /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE8A3B121EE0F01007D153B /* RegisterVC.swift */; };
 		7FE8A3B421EE18B5007D153B /* TabBarContr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE8A3B321EE18B5007D153B /* TabBarContr.swift */; };
+		8879841521EFA47000955325 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8879841421EFA47000955325 /* MapViewController.swift */; };
 		88CE92E221EF918500C09028 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8D21ECEF2A004A1575 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf */; };
 		88CE92E321EF918500C09028 /* itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8A21ECEF2A004A1575 /* itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf */; };
 		88CE92E421EF918500C09028 /* itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8921ECEF2A004A1575 /* itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf */; };
@@ -72,6 +73,7 @@
 		8843DF9521ECEF2B004A1575 /* itc-avant-garde-gothic-std-demi-condensed-oblique-5895723d52f87.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "itc-avant-garde-gothic-std-demi-condensed-oblique-5895723d52f87.otf"; sourceTree = "<group>"; };
 		8843DF9621ECEF2B004A1575 /* itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf"; sourceTree = "<group>"; };
 		8843DF9721ECEF2B004A1575 /* itc-avant-garde-gothic-std-book-58957161d80eb.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "itc-avant-garde-gothic-std-book-58957161d80eb.otf"; sourceTree = "<group>"; };
+		8879841421EFA47000955325 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				7FE8A3A521EE0BA3007D153B /* PlaceDetail.swift */,
 				7FE8A3A721EE0BB7007D153B /* AddPlace.swift */,
 				7FE8A3A921EE0BD7007D153B /* MapVC.swift */,
+				8879841421EFA47000955325 /* MapViewController.swift */,
 				7FE8A3AB21EE0CC6007D153B /* PlaceCell.swift */,
 				7FE8A3AD21EE0EE4007D153B /* LoginVC.swift */,
 				7FE8A3AF21EE0EF3007D153B /* RecoverPassVC.swift */,
@@ -239,6 +242,7 @@
 				7FACB4B821E60B56003A95E0 /* ViewController.swift in Sources */,
 				7FE8A3B221EE0F01007D153B /* RegisterVC.swift in Sources */,
 				7FACB4B621E60B56003A95E0 /* AppDelegate.swift in Sources */,
+				8879841521EFA47000955325 /* MapViewController.swift in Sources */,
 				7FE8A3B421EE18B5007D153B /* TabBarContr.swift in Sources */,
 				7FE8A3AA21EE0BD7007D153B /* MapVC.swift in Sources */,
 				7FE8A3AE21EE0EE4007D153B /* LoginVC.swift in Sources */,
