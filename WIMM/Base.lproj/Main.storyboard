@@ -22,18 +22,18 @@
         <!--Add Place-->
         <scene sceneID="RIx-fv-cRM">
             <objects>
-                <viewController title="Add Place" id="jTb-1s-yaw" sceneMemberID="viewController">
+                <viewController title="Add Place" id="jTb-1s-yaw" customClass="AddPlace" customModule="WIMM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZI2-fd-Zjl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="DarkBlue"/>
+                        <color key="backgroundColor" name="LittleGray"/>
                         <viewLayoutGuide key="safeArea" id="9ny-82-kae"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Place" id="GNj-oe-x0s"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1YC-Fi-40r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3722" y="675"/>
+            <point key="canvasLocation" x="-4794" y="454"/>
         </scene>
         <!--My places-->
         <scene sceneID="Ccu-od-e0o">
@@ -297,22 +297,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="rNU-sM-QGM" userLabel="IMAGEN SV">
-                                <rect key="frame" x="0.0" y="50" width="320" height="200"/>
+                                <rect key="frame" x="0.0" y="35" width="320" height="153"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Isologo" translatesAutoresizingMaskIntoConstraints="NO" id="1ey-yx-SrD">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="153"/>
                                     </imageView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Ybl-wh-3qJ"/>
-                                    <constraint firstAttribute="width" constant="320" id="yyg-EX-ddo"/>
-                                </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28q-OA-VXt" userLabel="ViewForm">
-                                <rect key="frame" x="0.0" y="198" width="320" height="370"/>
+                                <rect key="frame" x="0.0" y="203" width="320" height="365"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="p8B-cU-Fe8" userLabel="TEXTOS">
-                                        <rect key="frame" x="35" y="33" width="250" height="304"/>
+                                        <rect key="frame" x="35" y="30.5" width="250" height="304"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeU-1I-vxN">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="20"/>
@@ -340,8 +336,17 @@
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhp-XH-1hS">
+                                                <rect key="frame" x="0.0" y="166" width="250" height="40"/>
+                                                <color key="backgroundColor" name="OrangeRed"/>
+                                                <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="28"/>
+                                                <state key="normal" title="GO"/>
+                                                <connections>
+                                                    <segue destination="lhE-hW-a0M" kind="show" identifier="doLoginSegue" id="i9F-Ft-03g"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGp-dB-sfe">
-                                                <rect key="frame" x="0.0" y="166" width="250" height="27"/>
+                                                <rect key="frame" x="0.0" y="228" width="250" height="27"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="15"/>
                                                 <state key="normal" title="Create an account"/>
                                                 <connections>
@@ -349,20 +354,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdh-jk-i2B">
-                                                <rect key="frame" x="0.0" y="215" width="250" height="27"/>
+                                                <rect key="frame" x="0.0" y="277" width="250" height="27"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="15"/>
                                                 <state key="normal" title="I forgot my password"/>
                                                 <connections>
                                                     <segue destination="gjE-mN-ckg" kind="show" identifier="recoverSegue" id="YUQ-TG-TTq"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhp-XH-1hS">
-                                                <rect key="frame" x="0.0" y="264" width="250" height="40"/>
-                                                <color key="backgroundColor" name="OrangeRed"/>
-                                                <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="28"/>
-                                                <state key="normal" title="GO"/>
-                                                <connections>
-                                                    <segue destination="lhE-hW-a0M" kind="show" identifier="doLoginSegue" id="i9F-Ft-03g"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -375,14 +371,15 @@
                                 <constraints>
                                     <constraint firstItem="p8B-cU-Fe8" firstAttribute="centerY" secondItem="28q-OA-VXt" secondAttribute="centerY" id="Rfb-cN-AG5"/>
                                     <constraint firstAttribute="width" constant="320" id="cu0-rA-sen"/>
-                                    <constraint firstAttribute="height" constant="370" id="fH9-GC-ytu"/>
+                                    <constraint firstAttribute="height" constant="365" id="fH9-GC-ytu"/>
                                     <constraint firstItem="p8B-cU-Fe8" firstAttribute="centerX" secondItem="28q-OA-VXt" secondAttribute="centerX" id="w1Q-NV-R41"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rNU-sM-QGM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="JYN-DJ-WfD"/>
+                            <constraint firstItem="rNU-sM-QGM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="JYN-DJ-WfD"/>
+                            <constraint firstItem="28q-OA-VXt" firstAttribute="top" secondItem="rNU-sM-QGM" secondAttribute="bottom" constant="15" id="Kkl-hI-uEy"/>
                             <constraint firstAttribute="trailing" secondItem="rNU-sM-QGM" secondAttribute="trailing" id="Me4-y3-0oH"/>
                             <constraint firstItem="28q-OA-VXt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OTs-7M-Eh4"/>
                             <constraint firstItem="28q-OA-VXt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="UBZ-je-8QJ"/>
@@ -414,22 +411,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ria-LU-xDh" userLabel="IMAGEN SV">
-                                <rect key="frame" x="0.0" y="50" width="320" height="200"/>
+                                <rect key="frame" x="0.0" y="35" width="320" height="153"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Isologo" translatesAutoresizingMaskIntoConstraints="NO" id="rad-Wr-262">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="153"/>
                                     </imageView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="8Iv-N8-gms"/>
-                                    <constraint firstAttribute="width" constant="320" id="d6h-Q0-5c0"/>
-                                </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTf-p0-apE" userLabel="ViewForm">
-                                <rect key="frame" x="0.0" y="198" width="320" height="370"/>
+                                <rect key="frame" x="0.0" y="203" width="320" height="365"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="wGN-ZF-Xx7" userLabel="TEXTOS">
-                                        <rect key="frame" x="35" y="17.5" width="250" height="335"/>
+                                        <rect key="frame" x="35" y="15" width="250" height="335"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzU-CE-luD">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="20"/>
@@ -447,8 +440,18 @@
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kVD-KF-ZL2">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mjQ-4J-GbU">
                                                 <rect key="frame" x="0.0" y="86" width="250" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="qs2-Sn-7EN"/>
+                                                    <constraint firstAttribute="height" constant="40" id="yqZ-4o-5P3"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kVD-KF-ZL2">
+                                                <rect key="frame" x="0.0" y="139" width="250" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="ckg-OU-KpG"/>
                                                     <constraint firstAttribute="height" constant="40" id="qyZ-wa-eNO"/>
@@ -458,7 +461,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat Pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p40-vj-MTT">
-                                                <rect key="frame" x="0.0" y="139" width="250" height="40"/>
+                                                <rect key="frame" x="0.0" y="192" width="250" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="RXY-7G-bPK"/>
                                                     <constraint firstAttribute="width" constant="250" id="iU8-sm-4gE"/>
@@ -467,26 +470,8 @@
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mjQ-4J-GbU">
-                                                <rect key="frame" x="0.0" y="192" width="250" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="250" id="qs2-Sn-7EN"/>
-                                                    <constraint firstAttribute="height" constant="40" id="yqZ-4o-5P3"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwc-Om-In2">
-                                                <rect key="frame" x="0.0" y="245" width="250" height="27"/>
-                                                <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="15"/>
-                                                <state key="normal" title="I have an account"/>
-                                                <connections>
-                                                    <action selector="goLogin:" destination="fef-a0-1nu" eventType="touchUpInside" id="pqt-je-1Gs"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGx-bX-mse">
-                                                <rect key="frame" x="0.0" y="285" width="250" height="50"/>
+                                                <rect key="frame" x="0.0" y="245" width="250" height="50"/>
                                                 <color key="backgroundColor" name="OrangeRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="COV-3v-5rY"/>
@@ -494,6 +479,14 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="28"/>
                                                 <state key="normal" title="GO"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwc-Om-In2">
+                                                <rect key="frame" x="0.0" y="308" width="250" height="27"/>
+                                                <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="15"/>
+                                                <state key="normal" title="I have an account"/>
+                                                <connections>
+                                                    <action selector="goLogin:" destination="fef-a0-1nu" eventType="touchUpInside" id="pqt-je-1Gs"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -503,7 +496,7 @@
                                 </subviews>
                                 <color key="backgroundColor" name="BlueSky"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="370" id="9CL-bh-85b"/>
+                                    <constraint firstAttribute="height" constant="365" id="9CL-bh-85b"/>
                                     <constraint firstItem="wGN-ZF-Xx7" firstAttribute="centerX" secondItem="MTf-p0-apE" secondAttribute="centerX" id="WHT-Ws-dov"/>
                                     <constraint firstAttribute="width" constant="320" id="aVq-Pz-3hh"/>
                                     <constraint firstItem="wGN-ZF-Xx7" firstAttribute="centerY" secondItem="MTf-p0-apE" secondAttribute="centerY" id="wec-bv-HKH"/>
@@ -514,9 +507,10 @@
                         <constraints>
                             <constraint firstItem="Ria-LU-xDh" firstAttribute="leading" secondItem="9we-RF-Ytg" secondAttribute="leading" id="OPy-sb-drv"/>
                             <constraint firstItem="Ria-LU-xDh" firstAttribute="trailing" secondItem="9we-RF-Ytg" secondAttribute="trailing" id="RuJ-Ab-6Qd"/>
+                            <constraint firstItem="MTf-p0-apE" firstAttribute="top" secondItem="Ria-LU-xDh" secondAttribute="bottom" constant="15" id="TsA-6l-DN7"/>
                             <constraint firstItem="MTf-p0-apE" firstAttribute="trailing" secondItem="9we-RF-Ytg" secondAttribute="trailing" id="gkc-jJ-6UD"/>
                             <constraint firstItem="MTf-p0-apE" firstAttribute="leading" secondItem="9we-RF-Ytg" secondAttribute="leading" id="mL4-Z8-0fd"/>
-                            <constraint firstItem="Ria-LU-xDh" firstAttribute="top" secondItem="9we-RF-Ytg" secondAttribute="top" constant="30" id="olM-GV-iLa"/>
+                            <constraint firstItem="Ria-LU-xDh" firstAttribute="top" secondItem="9we-RF-Ytg" secondAttribute="top" constant="15" id="olM-GV-iLa"/>
                             <constraint firstItem="MTf-p0-apE" firstAttribute="bottom" secondItem="9we-RF-Ytg" secondAttribute="bottom" id="qDo-GF-W9D"/>
                             <constraint firstItem="MTf-p0-apE" firstAttribute="centerX" secondItem="JSo-HV-Oij" secondAttribute="centerX" id="zhD-Mv-hWI"/>
                         </constraints>
@@ -547,16 +541,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="b1V-Fk-EHI" userLabel="IMAGEN SV">
-                                <rect key="frame" x="0.0" y="50" width="320" height="200"/>
+                                <rect key="frame" x="0.0" y="35" width="320" height="148"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Isologo" translatesAutoresizingMaskIntoConstraints="NO" id="pHy-3i-wOH">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
                                     </imageView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="Sby-7o-9fp"/>
-                                    <constraint firstAttribute="height" constant="200" id="eWn-JV-ZeS"/>
-                                </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xT4-ig-xiX" userLabel="ViewForm">
                                 <rect key="frame" x="0.0" y="198" width="320" height="370"/>
@@ -580,18 +570,24 @@
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Efc-Rc-3hf">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tq2-5H-o5y">
                                                 <rect key="frame" x="0.0" y="104" width="250" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="WLT-ud-sCE"/>
-                                                    <constraint firstAttribute="width" constant="250" id="duu-YY-loD"/>
+                                                    <constraint firstAttribute="width" constant="250" id="Ktu-w9-yEZ"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Or2-4v-pcB"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCf-IQ-mxR">
+                                                <rect key="frame" x="0.0" y="166" width="250" height="40"/>
+                                                <color key="backgroundColor" name="OrangeRed"/>
+                                                <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="28"/>
+                                                <state key="normal" title="GO"/>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGS-ft-GmL" userLabel="LoginButton">
-                                                <rect key="frame" x="0.0" y="166" width="250" height="27"/>
+                                                <rect key="frame" x="0.0" y="228" width="250" height="27"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="15"/>
                                                 <state key="normal" title="Login">
                                                     <color key="titleColor" red="0.3890309837" green="0.57585684729999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -599,12 +595,6 @@
                                                 <connections>
                                                     <action selector="goBack:" destination="gjE-mN-ckg" eventType="touchUpInside" id="zU1-94-yB3"/>
                                                 </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCf-IQ-mxR">
-                                                <rect key="frame" x="0.0" y="215" width="250" height="40"/>
-                                                <color key="backgroundColor" name="OrangeRed"/>
-                                                <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="28"/>
-                                                <state key="normal" title="GO"/>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -627,9 +617,10 @@
                             <constraint firstItem="xT4-ig-xiX" firstAttribute="bottom" secondItem="7Fv-TH-YHF" secondAttribute="bottom" id="7lu-er-WsQ"/>
                             <constraint firstItem="xT4-ig-xiX" firstAttribute="leading" secondItem="7Fv-TH-YHF" secondAttribute="leading" id="MHk-jU-YUt"/>
                             <constraint firstItem="xT4-ig-xiX" firstAttribute="centerX" secondItem="Emv-f8-8QX" secondAttribute="centerX" id="VK3-dn-ND4"/>
+                            <constraint firstItem="xT4-ig-xiX" firstAttribute="top" secondItem="b1V-Fk-EHI" secondAttribute="bottom" constant="15" id="YTX-8i-9Va"/>
                             <constraint firstItem="b1V-Fk-EHI" firstAttribute="leading" secondItem="7Fv-TH-YHF" secondAttribute="leading" id="fOk-hF-6PW"/>
                             <constraint firstAttribute="trailing" secondItem="b1V-Fk-EHI" secondAttribute="trailing" id="fXC-hD-WbI"/>
-                            <constraint firstItem="b1V-Fk-EHI" firstAttribute="top" secondItem="7Fv-TH-YHF" secondAttribute="top" constant="30" id="pSE-o0-i0n"/>
+                            <constraint firstItem="b1V-Fk-EHI" firstAttribute="top" secondItem="7Fv-TH-YHF" secondAttribute="top" constant="15" id="pSE-o0-i0n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Fv-TH-YHF"/>
                     </view>
