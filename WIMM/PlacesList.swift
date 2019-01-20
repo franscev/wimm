@@ -42,7 +42,7 @@ class PlacesList: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let placeDetailVC = segue.destination as! PlaceDetail
+        let placeDetailVC = segue.destination as! PlaceDetailVC
         
         let cellPlace = sender as! PlaceCell
      

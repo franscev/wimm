@@ -23,6 +23,12 @@
 		7FE8A3B221EE0F01007D153B /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE8A3B121EE0F01007D153B /* RegisterVC.swift */; };
 		7FE8A3B421EE18B5007D153B /* TabBarContr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE8A3B321EE18B5007D153B /* TabBarContr.swift */; };
 		8879841521EFA47000955325 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8879841421EFA47000955325 /* MapViewController.swift */; };
+		888EFF8921F4FDE700C6830E /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888EFF8721F4FDE700C6830E /* DateTableViewCell.xib */; };
+		888EFF8A21F4FDE700C6830E /* DatePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888EFF8821F4FDE700C6830E /* DatePickerTableViewCell.xib */; };
+		888EFF8D21F4FE0200C6830E /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888EFF8B21F4FE0100C6830E /* DatePickerTableViewCell.swift */; };
+		888EFF8E21F4FE0200C6830E /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888EFF8C21F4FE0200C6830E /* DateTableViewCell.swift */; };
+		889EC92121F3AEAA003A70F5 /* PlaceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EC92021F3AEAA003A70F5 /* PlaceDetailVC.swift */; };
+		889EC92721F48BF6003A70F5 /* LocationSearchBarTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EC92621F48BF6003A70F5 /* LocationSearchBarTable.swift */; };
 		88CE92E221EF918500C09028 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8D21ECEF2A004A1575 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf */; };
 		88CE92E321EF918500C09028 /* itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8A21ECEF2A004A1575 /* itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf */; };
 		88CE92E421EF918500C09028 /* itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8921ECEF2A004A1575 /* itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf */; };
@@ -74,6 +80,12 @@
 		8843DF9621ECEF2B004A1575 /* itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf"; sourceTree = "<group>"; };
 		8843DF9721ECEF2B004A1575 /* itc-avant-garde-gothic-std-book-58957161d80eb.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "itc-avant-garde-gothic-std-book-58957161d80eb.otf"; sourceTree = "<group>"; };
 		8879841421EFA47000955325 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		888EFF8721F4FDE700C6830E /* DateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DateTableViewCell.xib; path = ../../InlineDatePicker/InlineDatePicker/Xib/DateTableViewCell.xib; sourceTree = "<group>"; };
+		888EFF8821F4FDE700C6830E /* DatePickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerTableViewCell.xib; path = ../../InlineDatePicker/InlineDatePicker/Xib/DatePickerTableViewCell.xib; sourceTree = "<group>"; };
+		888EFF8B21F4FE0100C6830E /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerTableViewCell.swift; path = ../../InlineDatePicker/InlineDatePicker/Cells/DatePickerTableViewCell.swift; sourceTree = "<group>"; };
+		888EFF8C21F4FE0200C6830E /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTableViewCell.swift; path = ../../InlineDatePicker/InlineDatePicker/Cells/DateTableViewCell.swift; sourceTree = "<group>"; };
+		889EC92021F3AEAA003A70F5 /* PlaceDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailVC.swift; sourceTree = "<group>"; };
+		889EC92621F48BF6003A70F5 /* LocationSearchBarTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchBarTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,7 @@
 		7FACB4A921E60B56003A95E0 = {
 			isa = PBXGroup;
 			children = (
+				888EFF8621F4FDB400C6830E /* Xib */,
 				8843DF8821ECEEF1004A1575 /* fonts */,
 				7FACB4B421E60B56003A95E0 /* WIMM */,
 				7FACB4B321E60B56003A95E0 /* Products */,
@@ -107,6 +120,8 @@
 		7FACB4B421E60B56003A95E0 /* WIMM */ = {
 			isa = PBXGroup;
 			children = (
+				888EFF8B21F4FE0100C6830E /* DatePickerTableViewCell.swift */,
+				888EFF8C21F4FE0200C6830E /* DateTableViewCell.swift */,
 				7FACB4B521E60B56003A95E0 /* AppDelegate.swift */,
 				7FACB4B721E60B56003A95E0 /* ViewController.swift */,
 				7FACB4B921E60B56003A95E0 /* Main.storyboard */,
@@ -116,14 +131,16 @@
 				7FE8A3A121EE09F2007D153B /* Place.swift */,
 				7FE8A3A321EE0B92007D153B /* PlacesList.swift */,
 				7FE8A3A521EE0BA3007D153B /* PlaceDetail.swift */,
-				7FE8A3A721EE0BB7007D153B /* AddPlace.swift */,
 				7FE8A3A921EE0BD7007D153B /* MapVC.swift */,
-				8879841421EFA47000955325 /* MapViewController.swift */,
 				7FE8A3AB21EE0CC6007D153B /* PlaceCell.swift */,
 				7FE8A3AD21EE0EE4007D153B /* LoginVC.swift */,
 				7FE8A3AF21EE0EF3007D153B /* RecoverPassVC.swift */,
 				7FE8A3B121EE0F01007D153B /* RegisterVC.swift */,
 				7FE8A3B321EE18B5007D153B /* TabBarContr.swift */,
+				8879841421EFA47000955325 /* MapViewController.swift */,
+				889EC92021F3AEAA003A70F5 /* PlaceDetailVC.swift */,
+				889EC92621F48BF6003A70F5 /* LocationSearchBarTable.swift */,
+				7FE8A3A721EE0BB7007D153B /* AddPlace.swift */,
 			);
 			path = WIMM;
 			sourceTree = "<group>";
@@ -148,6 +165,15 @@
 				8843DF8B21ECEF2A004A1575 /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		888EFF8621F4FDB400C6830E /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				888EFF8821F4FDE700C6830E /* DatePickerTableViewCell.xib */,
+				888EFF8721F4FDE700C6830E /* DateTableViewCell.xib */,
+			);
+			path = Xib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +251,9 @@
 				88CE92EC21EF918500C09028 /* itc-avant-garde-gothic-std-demi-condensed-oblique-5895723d52f87.otf in Resources */,
 				88CE92E721EF918500C09028 /* itc-avant-garde-gothic-std-book-condensed-5895704105b51.otf in Resources */,
 				7FACB4BB21E60B56003A95E0 /* Main.storyboard in Resources */,
+				888EFF8921F4FDE700C6830E /* DateTableViewCell.xib in Resources */,
 				88CE92E921EF918500C09028 /* itc-avant-garde-gothic-std-book-oblique-589571c924212.otf in Resources */,
+				888EFF8A21F4FDE700C6830E /* DatePickerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,9 +266,13 @@
 			files = (
 				7FE8A3A221EE09F2007D153B /* Place.swift in Sources */,
 				7FE8A3A821EE0BB7007D153B /* AddPlace.swift in Sources */,
+				888EFF8E21F4FE0200C6830E /* DateTableViewCell.swift in Sources */,
 				7FE8A3B021EE0EF3007D153B /* RecoverPassVC.swift in Sources */,
+				889EC92121F3AEAA003A70F5 /* PlaceDetailVC.swift in Sources */,
 				7FACB4B821E60B56003A95E0 /* ViewController.swift in Sources */,
+				889EC92721F48BF6003A70F5 /* LocationSearchBarTable.swift in Sources */,
 				7FE8A3B221EE0F01007D153B /* RegisterVC.swift in Sources */,
+				888EFF8D21F4FE0200C6830E /* DatePickerTableViewCell.swift in Sources */,
 				7FACB4B621E60B56003A95E0 /* AppDelegate.swift in Sources */,
 				8879841521EFA47000955325 /* MapViewController.swift in Sources */,
 				7FE8A3B421EE18B5007D153B /* TabBarContr.swift in Sources */,
