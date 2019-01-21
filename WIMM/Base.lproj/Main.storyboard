@@ -272,7 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLACE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ua-uC-Nf3">
-                                <rect key="frame" x="133" y="82" width="54.5" height="17"/>
+                                <rect key="frame" x="133.5" y="82" width="53" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="Qup-Hp-yEb"/>
                                 </constraints>
@@ -292,19 +292,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="CLr-UC-BrG" userLabel="HorizontalSV">
-                                <rect key="frame" x="96" y="250" width="128" height="55"/>
+                                <rect key="frame" x="91.5" y="250" width="137" height="49"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fnr-5O-9ZC" userLabel="VerticalSV1">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="17"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Since:" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo7-p5-LLV">
-                                                <rect key="frame" x="0.0" y="0.0" width="59.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="59.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31/05/19" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixr-4b-9hs">
-                                                <rect key="frame" x="59.5" y="0.0" width="68.5" height="20"/>
+                                                <rect key="frame" x="59.5" y="0.0" width="77.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -312,16 +312,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cJ3-pt-lhO" userLabel="VerticalSV2">
-                                        <rect key="frame" x="0.0" y="35" width="128" height="20"/>
+                                        <rect key="frame" x="0.0" y="32" width="137" height="17"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Until:" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1a-8C-VsY">
-                                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/06/19" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xt-kg-lWO">
-                                                <rect key="frame" x="59.5" y="0.0" width="68.5" height="20"/>
+                                                <rect key="frame" x="59.5" y="0.0" width="77.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -331,7 +331,7 @@
                                 </subviews>
                             </stackView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ASP-3w-vso">
-                                <rect key="frame" x="13" y="337" width="294" height="157"/>
+                                <rect key="frame" x="13" y="331" width="294" height="157"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="157" id="G2p-UW-IgD"/>
                                     <constraint firstAttribute="width" constant="294" id="aHA-64-0Cc"/>
@@ -455,16 +455,16 @@
                                 <rect key="frame" x="0.0" y="203" width="320" height="365"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="p8B-cU-Fe8" userLabel="TEXTOS">
-                                        <rect key="frame" x="35" y="23.5" width="250" height="318.5"/>
+                                        <rect key="frame" x="35" y="30.5" width="250" height="304"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeU-1I-vxN">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="20"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="20"/>
                                                 <color key="textColor" name="DarkBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhh-CI-0lX">
-                                                <rect key="frame" x="0.0" y="45.5" width="250" height="40"/>
+                                                <rect key="frame" x="0.0" y="42" width="250" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="nTJ-eC-pQG"/>
                                                 </constraints>
@@ -473,7 +473,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="juA-qD-Xve">
-                                                <rect key="frame" x="0.0" y="107.5" width="250" height="40"/>
+                                                <rect key="frame" x="0.0" y="104" width="250" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Reb-TJ-r3c"/>
                                                 </constraints>
@@ -482,7 +482,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhp-XH-1hS">
-                                                <rect key="frame" x="0.0" y="169.5" width="250" height="45"/>
+                                                <rect key="frame" x="0.0" y="166" width="250" height="40"/>
                                                 <color key="backgroundColor" name="OrangeRed"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="28"/>
                                                 <state key="normal" title="GO"/>
@@ -491,7 +491,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGp-dB-sfe">
-                                                <rect key="frame" x="0.0" y="236.5" width="250" height="30"/>
+                                                <rect key="frame" x="0.0" y="228" width="250" height="27"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="15"/>
                                                 <state key="normal" title="Create an account"/>
                                                 <connections>
@@ -499,7 +499,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdh-jk-i2B">
-                                                <rect key="frame" x="0.0" y="288.5" width="250" height="30"/>
+                                                <rect key="frame" x="0.0" y="277" width="250" height="27"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="15"/>
                                                 <state key="normal" title="I forgot my password"/>
                                                 <connections>
@@ -567,16 +567,16 @@
                                 <rect key="frame" x="0.0" y="203" width="320" height="365"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="wGN-ZF-Xx7" userLabel="TEXTOS">
-                                        <rect key="frame" x="35" y="12" width="250" height="341.5"/>
+                                        <rect key="frame" x="35" y="15" width="250" height="335"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzU-CE-luD">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="20"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="20"/>
                                                 <color key="textColor" name="DarkBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4I-Np-FGp">
-                                                <rect key="frame" x="0.0" y="36.5" width="250" height="40"/>
+                                                <rect key="frame" x="0.0" y="33" width="250" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="kMX-bF-rqY"/>
                                                 </constraints>
@@ -585,7 +585,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mjQ-4J-GbU">
-                                                <rect key="frame" x="0.0" y="89.5" width="250" height="40"/>
+                                                <rect key="frame" x="0.0" y="86" width="250" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="yqZ-4o-5P3"/>
                                                 </constraints>
@@ -594,7 +594,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kVD-KF-ZL2">
-                                                <rect key="frame" x="0.0" y="142.5" width="250" height="40"/>
+                                                <rect key="frame" x="0.0" y="139" width="250" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="qyZ-wa-eNO"/>
                                                 </constraints>
@@ -603,7 +603,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat Pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p40-vj-MTT">
-                                                <rect key="frame" x="0.0" y="195.5" width="250" height="40"/>
+                                                <rect key="frame" x="0.0" y="192" width="250" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="RXY-7G-bPK"/>
                                                 </constraints>
@@ -612,7 +612,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGx-bX-mse">
-                                                <rect key="frame" x="0.0" y="248.5" width="250" height="50"/>
+                                                <rect key="frame" x="0.0" y="245" width="250" height="50"/>
                                                 <color key="backgroundColor" name="OrangeRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="WZP-73-de6"/>
@@ -621,7 +621,7 @@
                                                 <state key="normal" title="GO"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwc-Om-In2">
-                                                <rect key="frame" x="0.0" y="311.5" width="250" height="30"/>
+                                                <rect key="frame" x="0.0" y="308" width="250" height="27"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="15"/>
                                                 <state key="normal" title="I have an account"/>
                                                 <connections>
@@ -692,16 +692,16 @@
                                 <rect key="frame" x="0.0" y="198" width="320" height="370"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="qtb-LM-xtc" userLabel="TEXTOS">
-                                        <rect key="frame" x="35" y="52" width="250" height="266.5"/>
+                                        <rect key="frame" x="35" y="57.5" width="250" height="255"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECOVER PASSWORD" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-HN-Xrr">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="20"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="20"/>
                                                 <color key="textColor" name="LittleGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rdZ-u2-1Mb">
-                                                <rect key="frame" x="0.0" y="45.5" width="250" height="40"/>
+                                                <rect key="frame" x="0.0" y="42" width="250" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="xaL-Mq-iqt"/>
                                                 </constraints>
@@ -710,7 +710,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tq2-5H-o5y">
-                                                <rect key="frame" x="0.0" y="107.5" width="250" height="40"/>
+                                                <rect key="frame" x="0.0" y="104" width="250" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Or2-4v-pcB"/>
                                                 </constraints>
@@ -719,13 +719,13 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCf-IQ-mxR">
-                                                <rect key="frame" x="0.0" y="169.5" width="250" height="45"/>
+                                                <rect key="frame" x="0.0" y="166" width="250" height="40"/>
                                                 <color key="backgroundColor" name="OrangeRed"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="28"/>
                                                 <state key="normal" title="GO"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGS-ft-GmL" userLabel="LoginButton">
-                                                <rect key="frame" x="0.0" y="236.5" width="250" height="30"/>
+                                                <rect key="frame" x="0.0" y="228" width="250" height="27"/>
                                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="15"/>
                                                 <state key="normal" title="Login">
                                                     <color key="titleColor" red="0.3890309837" green="0.57585684729999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
