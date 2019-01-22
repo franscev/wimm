@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,16 +22,16 @@
         <!--Add Place-->
         <scene sceneID="RIx-fv-cRM">
             <objects>
-                <viewController title="Add Place" id="jTb-1s-yaw" customClass="AddPlace" customModule="WIMM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPlaceVC" title="Add Place" id="jTb-1s-yaw" customClass="AddPlace" customModule="WIMM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZI2-fd-Zjl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ar7-Hn-vMK" userLabel="TableViewSV">
-                                <rect key="frame" x="0.0" y="205" width="320" height="62"/>
+                                <rect key="frame" x="0.0" y="205" width="320" height="111"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9bt-BP-K4S">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
                                         <color key="backgroundColor" name="LittleGray"/>
                                     </tableView>
                                 </subviews>
@@ -72,15 +72,23 @@
                                 </subviews>
                             </stackView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8oP-rU-zvU">
-                                <rect key="frame" x="15" y="282" width="290" height="175"/>
+                                <rect key="frame" x="15" y="331" width="290" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="P5O-0R-65c"/>
                                 </constraints>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CML-N1-MoC">
-                                <rect key="frame" x="120.5" y="472" width="79" height="32"/>
+                                <rect key="frame" x="120.5" y="521" width="79" height="32"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Add Place"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqK-PH-vyB">
+                                <rect key="frame" x="18" y="14" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <action selector="goBack:" destination="jTb-1s-yaw" eventType="touchUpInside" id="i67-BQ-UgS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="LittleGray"/>
@@ -112,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1YC-Fi-40r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4794" y="451"/>
+            <point key="canvasLocation" x="-3724" y="621"/>
         </scene>
         <!--My places-->
         <scene sceneID="Ccu-od-e0o">
@@ -155,13 +163,13 @@
                                                     <rect key="frame" x="62" y="11" width="48" height="44.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwn-HF-tDT" userLabel="Place Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwn-HF-tDT" userLabel="Place Label">
                                                             <rect key="frame" x="0.0" y="0.0" width="48" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" name="LittleGray"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bry-5r-xsK" userLabel="Date Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bry-5r-xsK" userLabel="Date Label">
                                                             <rect key="frame" x="0.0" y="24" width="48" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="LittleGray"/>
@@ -219,6 +227,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Od3-0Q-hhC">
                                 <rect key="frame" x="0.0" y="64" width="320" height="425"/>
+                                <connections>
+                                    <outlet property="delegate" destination="TAN-b6-W4U" id="Fyf-xQ-dKF"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nyi-lp-C0r">
                                 <rect key="frame" x="0.0" y="489" width="320" height="30"/>
@@ -428,7 +439,6 @@
                     <connections>
                         <segue destination="d5k-4L-DtQ" kind="relationship" relationship="viewControllers" id="a1c-i7-94Q"/>
                         <segue destination="zok-9L-ZJj" kind="relationship" relationship="viewControllers" id="WI2-R3-oHi"/>
-                        <segue destination="jTb-1s-yaw" kind="relationship" relationship="viewControllers" id="rfh-1x-NMz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Js-5R-sMB" userLabel="First Responder" sceneMemberID="firstResponder"/>

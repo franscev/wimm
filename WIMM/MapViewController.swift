@@ -33,8 +33,9 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
         initSearchTable()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(action(gestureRecognizer:)))
-        mapView.addGestureRecognizer(tapGesture)
+        
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(action(gestureRecognizer:)))
+        mapView.addGestureRecognizer(longGesture)
     }
     
     @IBAction func locateMe() {
@@ -101,17 +102,19 @@ class MapViewController: UIViewController {
             }
             if let placemark = placemarks?.last{
                 dir = self.stringFromPlacemark(placemark: placemark)
-                print(dir)
+                
             }
             self.address = dir
+            print("LA DIRECCIÓN ES: ", dir)
         }
     }
+    
     // FORMATEAR PLACEMARK
     func stringFromPlacemark(placemark: CLPlacemark)->String{
         var line = ""
         
         if let p = placemark.thoroughfare{
-            line += p + ","
+            line += p + ", "
         }
         if let p = placemark.subThoroughfare{
             line += p + ""
@@ -132,17 +135,14 @@ class MapViewController: UIViewController {
         
         let touchPoint = gestureRecognizer.location(in: mapView)
         let newCoords = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-        
+    
         geocoderLocation(newLocation: CLLocation(latitude: newCoords.latitude, longitude: newCoords.longitude))
         
         let annotation = MKPointAnnotation()
         
-        let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+        //let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
         
-        
-        
-        
-        
+     
         // COORDENADAS DEL PIN PUESTO CON EL DEDO O MOUSE
         annotation.coordinate = newCoords
         
@@ -150,10 +150,19 @@ class MapViewController: UIViewController {
         //        annotation.subtitle = address
         mapView.addAnnotation(annotation)
         
-        
         print("LAS COORDENADAS DEL PIN A MANO SON: " , newCoords)
     }
+    
+    @objc func pruebaSelector(){
+        print("JEJEJEJEJEJEJEJEJEJE")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let addPlaceVC = storyboard.instantiateViewController(withIdentifier: "AddPlaceVC")
+        self.present(addPlaceVC, animated: true)
+    }
+   
+    
 }
+
 
 
 
@@ -207,31 +216,68 @@ extension MapViewController: HandleMapSearch {
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated: true)
     }
-    
 }
 
-extension MapViewController : MKMapViewDelegate {
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
-        
-        guard !(annotation is MKUserLocation) else { return nil }
-        
-        let reuseId = "pin"
-        guard let pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView else { return nil }
-        
+//extension MapViewController : MKMapViewDelegate {
+//
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
+//
+//
+//        guard !(annotation is MKUserLocation) else { return nil }
+//
+//        let reuseId = "pin"
+//        guard let pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView else { return nil }
+//
+//        pinView.canShowCallout = true
+//        pinView.pinTintColor = UIColor.blue
+//
+//        print("HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO ")
+//
+//
+//        let smallSquare = CGSize(width: 30, height: 30)
+//        var button: UIButton?
+//        button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
+//        button?.setBackgroundImage(UIImage(named: "car"), for: UIControlState())
+//       // button?.addTarget(self, action: #selector(PlaceDetailVC.getDirections), for: .touchUpInside)
+//        pinView.leftCalloutAccessoryView = button
+//
+//
+//
+//        return pinView
+//    }
+//}
 
-        pinView.canShowCallout = true
-        pinView.pinTintColor = UIColor.blue
+extension MapViewController : MKMapViewDelegate{
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        print("HOLA HOLA HOLA HOLA HOLA HOLA")
+        if !(annotation is MKPointAnnotation) {
+            return nil
+        }
         
-        //        let smallSquare = CGSize(width: 30, height: 30)
-        //        var button: UIButton?
-        ////        button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
-        ////        button?.setBackgroundImage(UIImage(named: "car"), for: UIControlState())
-        //////        button?.addTarget(self, action: #selector(PlaceDetailVC.getDirections), for: .touchUpInside)
-        ////        pinView.leftCalloutAccessoryView = button
+        let annotationIdentifier = "AnnotationIdentifier"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
         
+       
         
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            annotationView!.canShowCallout = true
+        }
+        else {
+            annotationView!.annotation = annotation
+        }
         
-        return pinView
+        let button = UIButton()
+        button.setImage(UIImage(named :"save")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.frame = CGRect(x: 25, y: 0, width: 50, height: 50)
+        button.addTarget(self, action: #selector(MapViewController.pruebaSelector), for: .touchUpInside)
+        annotationView?.rightCalloutAccessoryView = button
+        
+        let pinImage = UIImage(named: "pin")
+        annotationView!.image = pinImage
+        
+        return annotationView
     }
-}
+    }

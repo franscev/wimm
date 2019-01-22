@@ -8,6 +8,7 @@ class AddPlace: UIViewController {
     var inputDates: [Date] = []
     //var tableView: UITableView!
     
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -17,6 +18,9 @@ class AddPlace: UIViewController {
         setupTableView()
     }
     
+    @IBAction func goBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     func setupTableView() {
 //        tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height), style: .grouped)
 //        view.addSubview(tableView)
