@@ -12,13 +12,26 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
         
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: Selector("endEditing:")))
+//        //init toolbar
+//        let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+//        //create left side empty space so that done button set on right side
+//        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+//        let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: Selector("doneButtonAction"))
+//        toolbar.setItems([flexSpace, doneBtn], animated: false)
+//        toolbar.sizeToFit()
+//        //setting toolbar as inputAccessoryView
+//        self.mailField.inputAccessoryView = toolbar
+//        self.passField.inputAccessoryView = toolbar
+//
+//
     }
     
     
- 
+//    func doneButtonAction(){
+//        self.view.endEditing(true)
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -38,3 +51,16 @@ class LoginVC: UIViewController {
     }
     
 }
+
+//extension LoginVC : UITextFieldDelegate{
+//
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//
+//        textField.resignFirstResponder()
+//        //or
+////        self.view.endEditing(true)
+//        return true
+//    }
+//
+//}
+//

@@ -1,22 +1,51 @@
 
 import UIKit
+import MapKit
+
 class AddPlace: UIViewController {
     
+    @IBOutlet weak var addressLabel: UILabel!
     
     var datePickerIndexPath: IndexPath?
     var inputTexts: [String] = ["Start date", "End date"]
     var inputDates: [Date] = []
     //var tableView: UITableView!
     
+    var coordX: Float = 0
+    var coordY: Float = 0
+    var addressOfPlace: String = ""
+    
+    @IBOutlet weak var mapView: MKMapView!
+    var fixedPin: MKPlacemark?
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: Selector("endEditing:")))
+        
+        addressLabel.text = addressOfPlace
+        print("LA PRUEBA DE PASAR DATOS COORD Y ES :" , coordY)
+        
         addInitailValues()
         setupTableView()
+        
+        setUpPin(fixedPin!) as AnyObject
+        
     }
+    
+    func setUpPin(_ placemark: MKPlacemark){
+
+        mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        //annotation.coordinate = (fixedPin?.coordinate)!
+        mapView.addAnnotation(annotation)
+        let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 450 , 450)
+        mapView.setRegion(region, animated: true)
+    }
+    
     
     @IBAction func goBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -106,5 +135,35 @@ extension AddPlace: DatePickerDelegate {
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
+}
+
+// DELEGADO DEL MAPVIEW
+extension AddPlace : MKMapViewDelegate{
+    
+    // FUNCIÓN QUE TE DEVUELVE UNA VISTA DEL ANNOTATIONVIEW (PIN)
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        
+        if !(annotation is MKPointAnnotation) {
+            return nil
+        }
+        
+        let annotationIdentifier = "AnnotationIdentifier"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
+        
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            annotationView!.canShowCallout = true
+        }
+        else {
+            annotationView!.annotation = annotation
+        }
+        
+        let pinImage = UIImage(named: "pin")
+        annotationView!.image = pinImage
+        
+        return annotationView
+    }
 }
 

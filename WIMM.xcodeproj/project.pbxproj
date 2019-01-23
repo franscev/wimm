@@ -27,6 +27,7 @@
 		888EFF8A21F4FDE700C6830E /* DatePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888EFF8821F4FDE700C6830E /* DatePickerTableViewCell.xib */; };
 		888EFF8D21F4FE0200C6830E /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888EFF8B21F4FE0100C6830E /* DatePickerTableViewCell.swift */; };
 		888EFF8E21F4FE0200C6830E /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888EFF8C21F4FE0200C6830E /* DateTableViewCell.swift */; };
+		8894899921F8F33D00B73A79 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894899821F8F33D00B73A79 /* Pin.swift */; };
 		889EC92121F3AEAA003A70F5 /* PlaceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EC92021F3AEAA003A70F5 /* PlaceDetailVC.swift */; };
 		889EC92721F48BF6003A70F5 /* LocationSearchBarTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EC92621F48BF6003A70F5 /* LocationSearchBarTable.swift */; };
 		88CE92E221EF918500C09028 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8D21ECEF2A004A1575 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf */; };
@@ -84,6 +85,7 @@
 		888EFF8821F4FDE700C6830E /* DatePickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerTableViewCell.xib; sourceTree = "<group>"; };
 		888EFF8B21F4FE0100C6830E /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerTableViewCell.swift; path = ../Cells/DatePickerTableViewCell.swift; sourceTree = "<group>"; };
 		888EFF8C21F4FE0200C6830E /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTableViewCell.swift; path = ../Cells/DateTableViewCell.swift; sourceTree = "<group>"; };
+		8894899821F8F33D00B73A79 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		889EC92021F3AEAA003A70F5 /* PlaceDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailVC.swift; sourceTree = "<group>"; };
 		889EC92621F48BF6003A70F5 /* LocationSearchBarTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchBarTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +131,7 @@
 				7FACB4BE21E60B57003A95E0 /* LaunchScreen.storyboard */,
 				7FACB4C121E60B57003A95E0 /* Info.plist */,
 				7FE8A3A121EE09F2007D153B /* Place.swift */,
+				8894899821F8F33D00B73A79 /* Pin.swift */,
 				7FE8A3A321EE0B92007D153B /* PlacesList.swift */,
 				7FE8A3A521EE0BA3007D153B /* PlaceDetail.swift */,
 				7FE8A3A921EE0BD7007D153B /* MapVC.swift */,
@@ -267,6 +270,7 @@
 				7FE8A3A221EE09F2007D153B /* Place.swift in Sources */,
 				7FE8A3A821EE0BB7007D153B /* AddPlace.swift in Sources */,
 				888EFF8E21F4FE0200C6830E /* DateTableViewCell.swift in Sources */,
+				8894899921F8F33D00B73A79 /* Pin.swift in Sources */,
 				7FE8A3B021EE0EF3007D153B /* RecoverPassVC.swift in Sources */,
 				889EC92121F3AEAA003A70F5 /* PlaceDetailVC.swift in Sources */,
 				7FACB4B821E60B56003A95E0 /* ViewController.swift in Sources */,

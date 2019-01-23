@@ -21,8 +21,11 @@ class MapViewController: UIViewController {
     
     var address: String = ""
     let geocoder = CLGeocoder()
-    
+    var nameOfAddress: String = ""
     var savedPlaces = [Place]()
+    
+    var coordX: Float = 0
+    var coordY: Float = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +34,7 @@ class MapViewController: UIViewController {
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
+        //locationManager.startUpdatingLocation()
         initSearchTable()
         
         let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(action(gestureRecognizer:)))
@@ -79,6 +82,7 @@ class MapViewController: UIViewController {
             
             let region = MKCoordinateRegionMakeWithDistance(currentCoordinate, 500 , 500)
             mapView.setRegion(region, animated: true)
+            locationManager.stopUpdatingLocation()
         }
     }
     
@@ -102,10 +106,12 @@ class MapViewController: UIViewController {
             }
             if let placemark = placemarks?.last{
                 dir = self.stringFromPlacemark(placemark: placemark)
+               
                 
             }
             self.address = dir
             print("LA DIRECCIÓN ES: ", dir)
+            self.nameOfAddress = dir
         }
     }
     
@@ -115,18 +121,25 @@ class MapViewController: UIViewController {
         
         if let p = placemark.thoroughfare{
             line += p + ", "
+            print("La calle es : ", placemark.thoroughfare!)
         }
         if let p = placemark.subThoroughfare{
             line += p + ""
+            print("El número es : ", placemark.subThoroughfare!)
         }
         if let p = placemark.locality{
             line += " (" + p + ")"
+            print("La localidad es : ", placemark.locality!)
         }
+            print("El nombre y número de la calle es: ", placemark.name!)
+        
+            nameOfAddress = placemark.name!
+        
         return line
+        
     }
     
 
-    
     
     // PONER PIN A MANO
     @objc func action(gestureRecognizer: UIGestureRecognizer) {
@@ -140,32 +153,43 @@ class MapViewController: UIViewController {
         
         let annotation = MKPointAnnotation()
         
-        //let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-        
-     
+  
         // COORDENADAS DEL PIN PUESTO CON EL DEDO O MOUSE
         annotation.coordinate = newCoords
         
         annotation.title = address
-        //        annotation.subtitle = address
+        //annotation.subtitle = address
         mapView.addAnnotation(annotation)
         
-        print("LAS COORDENADAS DEL PIN A MANO SON: " , newCoords)
+        //(print("LAS COORDENADAS DEL PIN A MANO SON: " , newCoords)
+        
+        coordX = Float(newCoords.longitude)
+        coordY = Float(newCoords.latitude)
+        
+        
+        print("LAS COORDENADAS DEL PIN A MANO SON: " , "Longitud: ",  coordX, "Latitud: " , coordY)
+        
     }
     
-    @objc func pruebaSelector(){
-        print("JEJEJEJEJEJEJEJEJEJE")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let addPlaceVC = storyboard.instantiateViewController(withIdentifier: "AddPlaceVC")
-        self.present(addPlaceVC, animated: true)
-    }
+        // INSTANCIANDO LA PANTALLA DE AÑADIR LUGAR, ADDPLACEVC
+        @objc func instanceAddPlaceVC(){
+           
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let addPlaceVC = storyboard.instantiateViewController(withIdentifier: "AddPlaceVC") as! AddPlace
+            
+            print("LA PRUEBA DEFINITORIA ES: ", selectedPin)
+
+            addPlaceVC.fixedPin = selectedPin
+            addPlaceVC.coordY = coordY
+            addPlaceVC.coordX = coordX
+            addPlaceVC.addressOfPlace = nameOfAddress
+            
+            self.present(addPlaceVC, animated: true)
+        }
    
-    
 }
 
-
-
-
+// DELEGADO DE LA UBICACIÓN DEL USUARIO
 extension MapViewController : CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -187,71 +211,44 @@ extension MapViewController : CLLocationManagerDelegate {
     
 }
 
+// DELEGADO PARA LA BARRA BÚSQUEDA DE UN LUGAR
 extension MapViewController: HandleMapSearch {
     
+
     func dropPinZoomIn(_ placemark: MKPlacemark){
+        
+        // clear existing pins
         mapView.removeAnnotations(mapView.annotations)
         // cache the pin
         selectedPin = placemark
-        // clear existing pins
-        
         
         
         let annotation = MKPointAnnotation()
         
         // COORDENADAS DEL PIN PUESTO MEDIANTE EL BUSCADOR
         annotation.coordinate = placemark.coordinate
-        print("LAS COORDENADAS DEL PIN MEDIANTE BÚSQUEDA SON: " , placemark.coordinate)
+        
+        print("LAS COORDENADAS DEL PIN MEDIANTE BÚSQUEDA SON: " , "Longitud: ",  placemark.coordinate.longitude, "Latitud: " , placemark.coordinate.latitude)
         
         annotation.title = placemark.title
-        //        annotation.subtitle = placemark.name
-        
-        //        if let city = placemark.locality,
-        //            let state = placemark.administrativeArea {
-        //            annotation.subtitle = "\(city) \(state)"
-        //        }
         
         mapView.addAnnotation(annotation)
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated: true)
+        
+        nameOfAddress = annotation.title!
     }
 }
 
-//extension MapViewController : MKMapViewDelegate {
-//
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
-//
-//
-//        guard !(annotation is MKUserLocation) else { return nil }
-//
-//        let reuseId = "pin"
-//        guard let pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView else { return nil }
-//
-//        pinView.canShowCallout = true
-//        pinView.pinTintColor = UIColor.blue
-//
-//        print("HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO HOLA MUNDO ")
-//
-//
-//        let smallSquare = CGSize(width: 30, height: 30)
-//        var button: UIButton?
-//        button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
-//        button?.setBackgroundImage(UIImage(named: "car"), for: UIControlState())
-//       // button?.addTarget(self, action: #selector(PlaceDetailVC.getDirections), for: .touchUpInside)
-//        pinView.leftCalloutAccessoryView = button
-//
-//
-//
-//        return pinView
-//    }
-//}
 
+// DELEGADO DEL MAPVIEW
 extension MapViewController : MKMapViewDelegate{
     
+    // FUNCIÓN QUE TE DEVUELVE UNA VISTA DEL ANNOTATIONVIEW (PIN)
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
     {
-        print("HOLA HOLA HOLA HOLA HOLA HOLA")
+
         if !(annotation is MKPointAnnotation) {
             return nil
         }
@@ -260,7 +257,6 @@ extension MapViewController : MKMapViewDelegate{
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
         
        
-        
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
             annotationView!.canShowCallout = true
@@ -272,12 +268,14 @@ extension MapViewController : MKMapViewDelegate{
         let button = UIButton()
         button.setImage(UIImage(named :"save")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.frame = CGRect(x: 25, y: 0, width: 50, height: 50)
-        button.addTarget(self, action: #selector(MapViewController.pruebaSelector), for: .touchUpInside)
+        button.addTarget(self, action: #selector(MapViewController.instanceAddPlaceVC), for: .touchUpInside)
         annotationView?.rightCalloutAccessoryView = button
         
         let pinImage = UIImage(named: "pin")
         annotationView!.image = pinImage
         
         return annotationView
+        }
     }
-    }
+
+
