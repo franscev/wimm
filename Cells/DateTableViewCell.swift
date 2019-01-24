@@ -43,7 +43,10 @@ class DateTableViewCell: UITableViewCell {
     // Awake from nib method
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
+        label.setValue(UIColor.init(named: "DarkBlue"), forKeyPath: "textColor")
+        
+        dateLabel.setValue(UIColor.init(named: "DarkBlue"), forKeyPath: "textColor")
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

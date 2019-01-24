@@ -11,8 +11,9 @@ class AddPlace: UIViewController {
     var inputDates: [Date] = []
     //var tableView: UITableView!
     
-    var coordX: Float = 0
-    var coordY: Float = 0
+    var coordenadasPin = CLLocationCoordinate2D()
+    var coordX: Double = 0
+    var coordY: Double = 0
     var addressOfPlace: String = ""
     
     @IBOutlet weak var mapView: MKMapView!
@@ -23,29 +24,34 @@ class AddPlace: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: Selector("endEditing:")))
+        //self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: Selector("endEditing:")))
+        
+        mapView.delegate = self
+        
         
         addressLabel.text = addressOfPlace
         print("LA PRUEBA DE PASAR DATOS COORD Y ES :" , coordY)
         
         addInitailValues()
         setupTableView()
-        
-        setUpPin(fixedPin!) as AnyObject
+        print("XxXXXXXXXX", coordenadasPin)
+        setUpPin(coordenadasPin)
         
     }
     
-    func setUpPin(_ placemark: MKPlacemark){
-
+    func setUpPin(_ coordinate: CLLocationCoordinate2D){
+        
         mapView.removeAnnotations(mapView.annotations)
+        
         let annotation = MKPointAnnotation()
-        annotation.coordinate = placemark.coordinate
+        annotation.coordinate = coordinate
+        annotation.title = addressOfPlace
         //annotation.coordinate = (fixedPin?.coordinate)!
         mapView.addAnnotation(annotation)
         let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 450 , 450)
         mapView.setRegion(region, animated: true)
+        
     }
-    
     
     @IBAction func goBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -161,7 +167,14 @@ extension AddPlace : MKMapViewDelegate{
         }
         
         let pinImage = UIImage(named: "pin")
-        annotationView!.image = pinImage
+        let resizedSize = CGSize(width: 45, height: 45)
+        
+        UIGraphicsBeginImageContext(resizedSize)
+        pinImage!.draw(in: CGRect(origin: .zero, size: resizedSize))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        annotationView?.image = resizedImage
+        annotationView!.image = resizedImage
         
         return annotationView
     }

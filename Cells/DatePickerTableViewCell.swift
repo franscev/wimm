@@ -17,6 +17,9 @@ class DatePickerTableViewCell: UITableViewCell {
     class func reuseIdentifier() -> String {
         return "DatePickerTableViewCellIdentifier"
     }
+
+    
+    
     
     // Nib name
     class func nibName() -> String {
@@ -41,6 +44,9 @@ class DatePickerTableViewCell: UITableViewCell {
     }
     
     func initView() {
+        datePicker.setValue(UIColor.init(named: "DarkBlue"), forKeyPath: "textColor")
+
+        datePicker.setValue(false, forKey: "highlightsToday")
         datePicker.addTarget(self, action: #selector(dateDidChange), for: .valueChanged)
     }
 

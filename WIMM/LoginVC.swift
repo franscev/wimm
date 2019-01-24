@@ -1,7 +1,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var mailField: UITextField!
     @IBOutlet weak var passField: UITextField!
@@ -10,22 +10,47 @@ class LoginVC: UIViewController {
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var recoverPassButton: UIButton!
     
+    @IBOutlet var mainView: UIView!
+    @IBOutlet weak var viewGray: UIView!
+
+    let blueDarkColor = "BlueDark"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        mailField.delegate = self
+        passField.delegate = self
+        
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+        setUpBorderViews()
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: Selector("endEditing:")))
-//        //init toolbar
-//        let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
-//        //create left side empty space so that done button set on right side
-//        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-//        let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: Selector("doneButtonAction"))
-//        toolbar.setItems([flexSpace, doneBtn], animated: false)
-//        toolbar.sizeToFit()
-//        //setting toolbar as inputAccessoryView
-//        self.mailField.inputAccessoryView = toolbar
-//        self.passField.inputAccessoryView = toolbar
-//
-//
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    if (string == " ") {
+    return false
+    }
+    return true
+    }
+    
+    func setUpBorderViews(){
+        
+        goButton.setTitle("GO", for: .normal)
+        
+        mainView.layer.borderWidth = 1.0
+        mainView.layer.borderColor = UIColor(named: blueDarkColor)?.cgColor
+        
+        viewGray.layer.borderWidth = 1.0
+        viewGray.layer.borderColor = UIColor(named: blueDarkColor)?.cgColor
+        
+        mailField.layer.borderWidth = 1.0
+        mailField.layer.borderColor = UIColor(named: blueDarkColor)?.cgColor
+        
+        passField.layer.borderWidth = 1.0
+        passField.layer.borderColor = UIColor(named: blueDarkColor)?.cgColor
+        
+        goButton.layer.borderWidth = 1.0
+        goButton.layer.borderColor = UIColor(named: blueDarkColor)?.cgColor
     }
     
     

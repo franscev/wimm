@@ -3,6 +3,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreGraphics
 
 protocol HandleMapSearch: class {
     func dropPinZoomIn(_ placemark:MKPlacemark)
@@ -24,14 +25,17 @@ class MapViewController: UIViewController {
     var nameOfAddress: String = ""
     var savedPlaces = [Place]()
     
-    var coordX: Float = 0
-    var coordY: Float = 0
+    var coordX: Double = 0
+    var coordY: Double = 0
+    
+    var coordenadas = CLLocationCoordinate2D()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapView.showsUserLocation = true
         
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(named: "DarkBlue")
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         //locationManager.startUpdatingLocation()
@@ -106,8 +110,6 @@ class MapViewController: UIViewController {
             }
             if let placemark = placemarks?.last{
                 dir = self.stringFromPlacemark(placemark: placemark)
-               
-                
             }
             self.address = dir
             print("LA DIRECCIÓN ES: ", dir)
@@ -153,6 +155,8 @@ class MapViewController: UIViewController {
         
         let annotation = MKPointAnnotation()
         
+        coordenadas.latitude = newCoords.latitude
+        coordenadas.longitude = newCoords.longitude
   
         // COORDENADAS DEL PIN PUESTO CON EL DEDO O MOUSE
         annotation.coordinate = newCoords
@@ -163,8 +167,8 @@ class MapViewController: UIViewController {
         
         //(print("LAS COORDENADAS DEL PIN A MANO SON: " , newCoords)
         
-        coordX = Float(newCoords.longitude)
-        coordY = Float(newCoords.latitude)
+        coordX = Double(newCoords.longitude)
+        coordY = Double(newCoords.latitude)
         
         
         print("LAS COORDENADAS DEL PIN A MANO SON: " , "Longitud: ",  coordX, "Latitud: " , coordY)
@@ -183,6 +187,7 @@ class MapViewController: UIViewController {
             addPlaceVC.coordY = coordY
             addPlaceVC.coordX = coordX
             addPlaceVC.addressOfPlace = nameOfAddress
+            addPlaceVC.coordenadasPin = coordenadas
             
             self.present(addPlaceVC, animated: true)
         }
@@ -228,6 +233,9 @@ extension MapViewController: HandleMapSearch {
         // COORDENADAS DEL PIN PUESTO MEDIANTE EL BUSCADOR
         annotation.coordinate = placemark.coordinate
         
+        coordenadas.latitude = annotation.coordinate.latitude
+        coordenadas.longitude = annotation.coordinate.longitude
+        
         print("LAS COORDENADAS DEL PIN MEDIANTE BÚSQUEDA SON: " , "Longitud: ",  placemark.coordinate.longitude, "Latitud: " , placemark.coordinate.latitude)
         
         annotation.title = placemark.title
@@ -267,15 +275,46 @@ extension MapViewController : MKMapViewDelegate{
         
         let button = UIButton()
         button.setImage(UIImage(named :"save")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        
+        
+        if button.isHighlighted{
+        button.backgroundColor = UIColor(named: "LittleGray")
+        button.tintColor = UIColor(named: "MediumBlue")
+        }
+            
+        else{
+        button.backgroundColor = UIColor(named: "OrangeRed")
+        button.tintColor = UIColor.white
+        }
+       
+        
+        
         button.frame = CGRect(x: 25, y: 0, width: 50, height: 50)
         button.addTarget(self, action: #selector(MapViewController.instanceAddPlaceVC), for: .touchUpInside)
         annotationView?.rightCalloutAccessoryView = button
         
+        
+        
         let pinImage = UIImage(named: "pin")
-        annotationView!.image = pinImage
+        let resizedSize = CGSize(width: 45, height: 45)
+        
+        UIGraphicsBeginImageContext(resizedSize)
+        pinImage!.draw(in: CGRect(origin: .zero, size: resizedSize))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        annotationView?.image = resizedImage
+        annotationView!.image = resizedImage
         
         return annotationView
         }
     }
 
+    extension UIApplication {
+    var statusBarView: UIView? {
+        if responds(to: Selector(("statusBar"))) {
+            return value(forKey: "statusBar") as? UIView
+            }
+        return nil
+        }
+    }
 
