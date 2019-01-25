@@ -9,7 +9,6 @@ class AddPlace: UIViewController {
     var datePickerIndexPath: IndexPath?
     var inputTexts: [String] = ["Start date", "End date"]
     var inputDates: [Date] = []
-    //var tableView: UITableView!
     
     var coordenadasPin = CLLocationCoordinate2D()
     var coordX: Double = 0
@@ -17,7 +16,6 @@ class AddPlace: UIViewController {
     var addressOfPlace: String = ""
     
     @IBOutlet weak var mapView: MKMapView!
-    var fixedPin: MKPlacemark?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -46,7 +44,6 @@ class AddPlace: UIViewController {
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         annotation.title = addressOfPlace
-        //annotation.coordinate = (fixedPin?.coordinate)!
         mapView.addAnnotation(annotation)
         let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 450 , 450)
         mapView.setRegion(region, animated: true)

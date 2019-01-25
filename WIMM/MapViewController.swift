@@ -18,7 +18,6 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     var resultSearchController: UISearchController!
-    var selectedPin: MKPlacemark?
     
     var address: String = ""
     let geocoder = CLGeocoder()
@@ -181,9 +180,6 @@ class MapViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let addPlaceVC = storyboard.instantiateViewController(withIdentifier: "AddPlaceVC") as! AddPlace
             
-            print("LA PRUEBA DEFINITORIA ES: ", selectedPin)
-
-            addPlaceVC.fixedPin = selectedPin
             addPlaceVC.coordY = coordY
             addPlaceVC.coordX = coordX
             addPlaceVC.addressOfPlace = nameOfAddress
@@ -224,9 +220,7 @@ extension MapViewController: HandleMapSearch {
         
         // clear existing pins
         mapView.removeAnnotations(mapView.annotations)
-        // cache the pin
-        selectedPin = placemark
-        
+        // cache the pin        
         
         let annotation = MKPointAnnotation()
         
