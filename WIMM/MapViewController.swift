@@ -289,7 +289,7 @@ extension MapViewController : MKMapViewDelegate{
         
         
         
-        let pinImage = UIImage(named: "pin")
+        let pinImage = UIImage(named: "PinNaranja")
         let resizedSize = CGSize(width: 45, height: 45)
         
         UIGraphicsBeginImageContext(resizedSize)
