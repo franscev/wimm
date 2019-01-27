@@ -30,6 +30,7 @@
 		8894899921F8F33D00B73A79 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894899821F8F33D00B73A79 /* Pin.swift */; };
 		889EC92121F3AEAA003A70F5 /* PlaceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EC92021F3AEAA003A70F5 /* PlaceDetailVC.swift */; };
 		889EC92721F48BF6003A70F5 /* LocationSearchBarTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EC92621F48BF6003A70F5 /* LocationSearchBarTable.swift */; };
+		88C0722321FD0997005A1E71 /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0722221FD0997005A1E71 /* NetworkingClient.swift */; };
 		88CE92E221EF918500C09028 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8D21ECEF2A004A1575 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf */; };
 		88CE92E321EF918500C09028 /* itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8A21ECEF2A004A1575 /* itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf */; };
 		88CE92E421EF918500C09028 /* itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8921ECEF2A004A1575 /* itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf */; };
@@ -45,9 +46,12 @@
 		88CE92EE21EF918500C09028 /* itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8C21ECEF2A004A1575 /* itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf */; };
 		88CE92EF21EF918500C09028 /* itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8E21ECEF2A004A1575 /* itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf */; };
 		88CE92F021EF918500C09028 /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8843DF8B21ECEF2A004A1575 /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf */; };
+		E3FF5DB137B3B976AD46BE43 /* Pods_WIMM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF9452C8E03AE928680CD9 /* Pods_WIMM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D4189B8BFF7781AD2B03533 /* Pods-WIMM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIMM.release.xcconfig"; path = "Pods/Target Support Files/Pods-WIMM/Pods-WIMM.release.xcconfig"; sourceTree = "<group>"; };
+		7E44637990D36CFB7DB4FCDC /* Pods-WIMM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIMM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WIMM/Pods-WIMM.debug.xcconfig"; sourceTree = "<group>"; };
 		7FACB4B221E60B56003A95E0 /* WIMM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIMM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FACB4B521E60B56003A95E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FACB4B721E60B56003A95E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 		8894899821F8F33D00B73A79 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		889EC92021F3AEAA003A70F5 /* PlaceDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailVC.swift; sourceTree = "<group>"; };
 		889EC92621F48BF6003A70F5 /* LocationSearchBarTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchBarTable.swift; sourceTree = "<group>"; };
+		88C0722221FD0997005A1E71 /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
+		B3EF9452C8E03AE928680CD9 /* Pods_WIMM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WIMM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3FF5DB137B3B976AD46BE43 /* Pods_WIMM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +115,8 @@
 				8843DF8821ECEEF1004A1575 /* fonts */,
 				7FACB4B421E60B56003A95E0 /* WIMM */,
 				7FACB4B321E60B56003A95E0 /* Products */,
+				E41B7647A58EB26C7F7357D8 /* Pods */,
+				F89AF512B1AD946EC0207C76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +153,7 @@
 				889EC92021F3AEAA003A70F5 /* PlaceDetailVC.swift */,
 				889EC92621F48BF6003A70F5 /* LocationSearchBarTable.swift */,
 				7FE8A3A721EE0BB7007D153B /* AddPlace.swift */,
+				88C0722221FD0997005A1E71 /* NetworkingClient.swift */,
 			);
 			path = WIMM;
 			sourceTree = "<group>";
@@ -179,6 +189,23 @@
 			path = Xib;
 			sourceTree = "<group>";
 		};
+		E41B7647A58EB26C7F7357D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E44637990D36CFB7DB4FCDC /* Pods-WIMM.debug.xcconfig */,
+				1D4189B8BFF7781AD2B03533 /* Pods-WIMM.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F89AF512B1AD946EC0207C76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3EF9452C8E03AE928680CD9 /* Pods_WIMM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FACB4C421E60B57003A95E0 /* Build configuration list for PBXNativeTarget "WIMM" */;
 			buildPhases = (
+				109D6D5662B3092A635B75F9 /* [CP] Check Pods Manifest.lock */,
 				7FACB4AE21E60B56003A95E0 /* Sources */,
 				7FACB4AF21E60B56003A95E0 /* Frameworks */,
 				7FACB4B021E60B56003A95E0 /* Resources */,
+				CC9938350561C0ED9AA77304 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +291,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		109D6D5662B3092A635B75F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WIMM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC9938350561C0ED9AA77304 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WIMM/Pods-WIMM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WIMM/Pods-WIMM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7FACB4AE21E60B56003A95E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -276,6 +352,7 @@
 				7FACB4B821E60B56003A95E0 /* ViewController.swift in Sources */,
 				889EC92721F48BF6003A70F5 /* LocationSearchBarTable.swift in Sources */,
 				7FE8A3B221EE0F01007D153B /* RegisterVC.swift in Sources */,
+				88C0722321FD0997005A1E71 /* NetworkingClient.swift in Sources */,
 				888EFF8D21F4FE0200C6830E /* DatePickerTableViewCell.swift in Sources */,
 				7FACB4B621E60B56003A95E0 /* AppDelegate.swift in Sources */,
 				8879841521EFA47000955325 /* MapViewController.swift in Sources */,
@@ -426,6 +503,7 @@
 		};
 		7FACB4C521E60B57003A95E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E44637990D36CFB7DB4FCDC /* Pods-WIMM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -444,6 +522,7 @@
 		};
 		7FACB4C621E60B57003A95E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D4189B8BFF7781AD2B03533 /* Pods-WIMM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

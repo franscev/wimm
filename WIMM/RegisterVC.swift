@@ -1,6 +1,8 @@
 
 
 import UIKit
+import Alamofire
+
 
 class RegisterVC: UIViewController,UITextFieldDelegate {
     
@@ -14,14 +16,53 @@ class RegisterVC: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var goButton: UIButton!
     let blueDarkColor = "BlueDark"
+    let uRL = "http:localhost:8888/touristme/public/api/user"
+    
+    var parameters: [String: String] = [
+    "name" : "francisquito",
+    "email" : "iosclient@cev.com",
+    "password" : "francisquitoelmejor",
+    "passwordConfirm": "francisquitoelmejor"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpFieldDelegates()
         setUpBorderViews()
+        //requestAlamofire()
         
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: Selector("endEditing:")))
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
+    }
+    
+    @IBAction func sendInputFieldData(_ sender: Any) {
+        
+        let parametersInput: [String: String] = [
+            "name" : userField.text!,
+            "email" : mailField.text!,
+            "password" : passField.text!,
+            "passwordConfirm": repeatPassField.text!
+        ]
+        
+        parameters = parametersInput
+        requestAlamofire()
+    }
+    
+    
+    func requestAlamofire()
+    {
+        Alamofire.request(uRL, method: .post, parameters: parameters,encoding: JSONEncoding.default, headers: nil).responseString {
+            response in
+            switch response.result {
+            case .success:
+                print("LA RESPUESTA ACEPTADA ES:", response)
+                
+                break
+            case .failure(let error):
+                print("LA RESPUESTA ERRÓNEA ES: ", error)
+            }
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -65,8 +106,22 @@ class RegisterVC: UIViewController,UITextFieldDelegate {
         goButton.layer.borderColor = UIColor(named: blueDarkColor)?.cgColor
     }
 
-    @IBAction func goLogin(_ sender: Any) {
+    @IBAction func goBackToLoginVC(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+        
+    }
+    
+    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        userField.resignFirstResponder()
+//    }
+
+    
 }
+
+

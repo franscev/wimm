@@ -3,5 +3,5 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'WIMM' do
-    pod 'JTAppleCalendar', '~> 7.0'
+    pod 'Alamofire', '~> 4.5'
 end
